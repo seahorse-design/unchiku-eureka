@@ -145,14 +145,14 @@ function checkAnswer(selected, correct) {
   if (selected === correct) {
     // 正解の場合
     resultMessageDiv.textContent = "正解";
-    resultImage.src = "/assets/img/text_eureka.svg"; // 正解画像のパスを指定
+    resultImage.src = "../assets/img/text_eureka.svg"; // 正解画像のパスを指定
     resultImage.alt = "エウレーカ！";
     resultContainer.classList.add("correct"); // 正解用クラスを追加
     score++; // スコア加算
   } else {
     // 不正解の場合
     resultMessageDiv.textContent = "不正解…";
-    resultImage.src = "/assets/img/text_incorrect.svg"; // 不正解画像のパスを指定
+    resultImage.src = "../assets/img/text_incorrect.svg"; // 不正解画像のパスを指定
     resultImage.alt = "ざんねん…";
     resultContainer.classList.add("incorrect"); // 不正解用クラスを追加
   }
