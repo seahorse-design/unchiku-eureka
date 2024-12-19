@@ -1,0 +1,58 @@
+@charset "utf-8";
+@use "../base/_variable" as v;
+
+.primary-button {
+	position: relative;
+	display: block;
+	padding: 0.8em 0.5em;
+	margin: 3% auto 0;
+	font-family: v.$font-family;
+	font-weight: bold;
+	color: #000;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	background: v.$bg-key;
+	border: 2px solid #000;
+	border-radius: 8px;
+	transition: color 0.2s, background 0.2s;
+	@include v.fz(18);
+
+	> .text {
+		margin: 0;
+		font-weight: bold;
+		line-height: 1;
+		color: #000;
+		letter-spacing: 0.1rem;
+		transition: color 0.2s;
+		@include v.fz(18);
+	}
+
+	&::after {
+		position: absolute;
+		top: 50%;
+		right: 4%;
+		display: block;
+		width: 0.5em;
+		height: 0.5em;
+		content: "";
+		border: 1px solid #000;
+		border-width: 2px 2px 0 0;
+		transition: border-color 0.2s, transform 0.2s;
+		transform: translate(0,-50%) rotate(45deg);
+	}
+
+	&:hover {
+		color: #fff;
+		background: v.$bg-primary;
+
+		> .text {
+			color: #fff;
+		}
+
+		&::after {
+			border-color: #fff;
+			transform: translate(4px,-50%) rotate(45deg);
+		}
+	}
+}

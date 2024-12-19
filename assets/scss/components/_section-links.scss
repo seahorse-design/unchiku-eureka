@@ -1,0 +1,22 @@
+@charset "utf-8";
+@use "../base/_variable" as v;
+
+.section-links {
+  > .buttons {
+    display: flex;
+    gap: 8px;
+
+    @include v.mq-max(sm) {
+      flex-flow: column wrap;
+    }
+
+    @include v.mq-min(sm) {
+      flex-flow: row wrap;
+      justify-content: space-between;
+
+      .secondary-button {
+        width: calc(50% - 4px);
+      }
+    }
+  }
+}

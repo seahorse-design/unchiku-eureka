@@ -1,0 +1,28 @@
+@charset "utf-8";
+@use "../base/_variable" as v;
+
+.frame-title {
+  position: relative;
+  padding: 16px;
+  margin: 80px auto 24px 0;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  background: v.$bg-primary;
+  border-radius: 8px;
+  @include v.fz(24);
+
+  &::after {
+    position: absolute;
+    bottom: -15px;
+    left: calc(50% - 12px);
+    display: block;
+    width: 24px;
+    height: 18px;
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    content: "";
+    background: v.$bg-primary;
+  }
+}

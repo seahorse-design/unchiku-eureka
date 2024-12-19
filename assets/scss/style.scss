@@ -1,0 +1,32 @@
+@charset "utf-8";
+@use "base/variable";
+@use "base/base";
+
+@use "components/body-container";
+@use "components/wrapper-container";
+@use "components/header-container";
+@use "components/footer-container";
+@use "components/primary-button";
+@use "components/secondary-button";
+@use "components/thirdly-button";
+@use "components/frame-title";
+
+// @use "components/default-list";
+@use "components/list-item";
+@use "components/option-label";
+
+// @use "components/index-list";
+@use "components/hero-container";
+@use "components/section-about";
+@use "components/section-notion";
+@use "components/section-links";
+
+@use "components/question-container";
+@use "components/hint-container";
+@use "components/modal-container";
+@use "components/result-container";
+@use "components/answer-container";
+@use "components/explanation-container";
+@use "components/final-container";
+@use "components/list-container";
+@use "helper";

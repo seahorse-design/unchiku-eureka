@@ -1,0 +1,11 @@
+@charset "utf-8";
+@use "../base/_variable" as v;
+
+.footer-container {
+	padding: 12px 0;
+	margin: 80px 0 0;
+	color: #fff;
+	text-align: center;
+	background: #444;
+	@include v.fz(12);
+}

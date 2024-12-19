@@ -1,0 +1,20 @@
+@charset "utf-8";
+@use "base/_variable" as v;
+
+._sp {
+	display: block;
+}
+
+._pc {
+	display: none;
+}
+
+@media screen and (min-width: 640px) {
+    ._sp {
+		display: none;
+	}
+
+	._pc {
+		display: block;
+	}
+}

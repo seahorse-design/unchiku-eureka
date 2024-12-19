@@ -1,0 +1,38 @@
+@charset "utf-8";
+@use "../base/_variable" as v;
+
+.modal-container {
+  display: none;
+  
+  > .overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(0 0 0 / 60%);
+  }
+
+  .dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    width: 300px;
+    padding: 20px; text-align: center;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 20%);
+    transform: translate(-50%, -50%);
+  }
+
+  .title {
+    margin: 0 0 12px;
+  }
+
+  .thirdly-button {
+    padding: 0.4em 1em;
+    margin: 16px auto 0;
+  }
+}

@@ -1,0 +1,25 @@
+@charset "utf-8";
+@use "../base/_variable" as v;
+
+.hero-container {
+	position: relative;
+	padding: 60px 0 0;
+
+	> .title {
+		width: 100%;
+		margin: 0 auto 60px;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	> .primary-button {
+		margin: 24px auto 0;
+	}
+
+	> .description {
+		margin: 12px 0 0;
+		text-align: center;
+	}
+}

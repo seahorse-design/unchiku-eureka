@@ -1,0 +1,12 @@
+@charset "utf-8";
+@use "../base/_variable" as v;
+
+.hint-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 48px 0 0;
+
+  .secondary-button {
+    width: 32%;
+  }
+}

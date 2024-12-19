@@ -1,0 +1,87 @@
+@charset "utf-8";
+@use 'sass:math';
+
+// Breakpoint
+$breakpoints: (
+  'sm': 576,
+  'md': 768,
+  'lg': 992,
+  'xl': 1024,
+);
+
+// min-width
+// @include v.mq-min(md)
+@mixin mq-min($size) {
+  @media screen and (min-width: #{map-get($breakpoints, $size)}px) {
+    @content;
+  }
+}
+
+// max-width
+@mixin mq-max($size) {
+  @media screen and (max-width: #{(map-get($breakpoints, $size)) - 1}px) {
+    @content;
+  }
+}
+
+// color
+$text-key: #f7d821;
+$text-primary: #000;
+$text-secondary: #666;
+$text-thirdary: #D9D9D9;
+$bg-key: #f7d821;
+$bg-primary: #000;
+$bg-secondary: #edecec;
+$bg-thirdary: #3f3f3f;
+$border-key: #f7d821;
+$border-primary: #000;
+$border-secondary: #FFFAF0;
+
+// font-family
+$font-family: "Noto Sans CJK JP","Noto Sans JP", "Yu Gothic UI",-apple-system,segoe ui,roboto,ubuntu,cantarell,noto sans,sans-serif,"Hiragino Sans","Hiragino Kaku Gothic ProN",blinkmacsystemfont,"MS PGothic",system-ui !important;
+
+// タイトルや数値など、目立たせる箇所にのみFuturaを適用する
+$font-family-en: futura-pt, sans-serif; 
+
+// font-size
+// rem自動計算 / px
+// @include fz(16);
+@mixin fz($size) {
+	font-size: (math.div($size, 16)) + rem;
+}
+
+// clamp自動計算
+// 利用例
+// font-size: v.fz-clamp(24);
+@function fz-clamp($min, $min-view-port: 390, $max-view-port: 585) {
+  $max: calc($min * 1.5);
+  $valiable-part: calc(($max - $min) / ($max-view-port - $min-view-port));
+  $constant: calc(($max - $max-view-port * $valiable-part) / 16);
+  $min-rem: calc($min / 16 * 1rem);
+  $max-rem: calc($max / 16 * 1rem);
+  $variable-rem: calc($constant * 1rem);
+  $variable-vw: calc(100 * $valiable-part * 1vw);
+
+  @return clamp($min-rem, $variable-rem + $variable-vw, $max-rem);
+}
+
+// button
+// フォントサイズ、横幅、マージンは都度設定
+// @include v.button(#fff, v.$primary, v.$primary);
+@mixin button($background: #2eb6aa, $border: #2eb6aa, $color: #fff) {
+  display: block;
+  padding: 0.5em 2em;
+  font-weight: 500;
+  color: $color;
+  text-align: center;
+  cursor: pointer;
+  background: $background;
+  border: 2px solid $border;
+  border-radius: 4px;
+  transition: color 0.3s, background 0.3s;
+
+  &:hover {
+    color: $background;
+    background: $color;
+  }
+}

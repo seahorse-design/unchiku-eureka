@@ -1,0 +1,8 @@
+@charset "utf-8";
+@use "../base/_variable" as v;
+
+.wrapper-container {
+  width: min(100%, 500px);
+  padding: 0 24px;
+  margin: 0 auto;
+}

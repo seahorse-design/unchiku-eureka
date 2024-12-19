@@ -1,0 +1,33 @@
+@charset "utf-8";
+@use "../base/_variable" as v;
+
+.secondary-button {
+	position: relative;
+	display: block;
+	padding: 0.8em 0.5em;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	background: #fff;
+	border: 2px solid #000;
+	border-radius: 8px;
+	transition: background 0.2s;
+
+	> .text {
+		margin: 0;
+		@include v.fz(14);
+
+		font-weight: 700;
+		color: #000;
+		letter-spacing: 0.1rem;
+		transition: color 0.2s;
+	}
+
+	&:hover {
+		background: v.$bg-primary;
+
+		> .text {
+			color: #fff;
+		}
+	}
+}

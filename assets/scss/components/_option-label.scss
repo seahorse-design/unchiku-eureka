@@ -1,0 +1,27 @@
+@charset "utf-8";
+@use "../base/_variable" as v;
+
+.option-radio + .option-label {
+  display: block;
+  padding: 8px 8px 8px 40px;
+  margin: 8px 0 0;
+  line-height: 1.5;
+  background: #fff;
+  border: 2px solid v.$border-primary;
+  border-radius: 8px;
+}
+
+.option-radio:checked + .option-label {
+  // background: #daefde;
+  background: url("/assets/img/icon_check.svg") no-repeat,#daefde;
+  background-position: 0.6em 50%;
+  background-size: 1.4em;
+  border-color: #069321;
+}
+
+.option-radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}

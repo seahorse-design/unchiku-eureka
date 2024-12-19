@@ -1,0 +1,25 @@
+@charset "utf-8";
+@use "../base/_variable" as v;
+
+.index-list {
+	width: max-content;
+
+	> li {
+		margin: 5% 0 0;
+		line-height: 1.3;
+		color: v.$text-key;
+		list-style-type: decimal;
+
+		@include v.fz(16);
+
+		a {
+			position: relative;
+			color: v.$text-key;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}

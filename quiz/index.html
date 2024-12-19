@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="body-container">
+  <header class="header-container">
+    <p class="logo"><img src="/assets/img/logo.svg" alt="うんちくエウレーカ3択クイズ" width="309" height="90"></p>
+  </header>
+
+  <div class="wrapper-container">
+    <!-- メインゲーム画面 -->
+    <div id="gameScreen" class="question-container">
+      <h1 class="frame-title"><span id="currentQuestionNumber">1</span>問目</h1>
+      <div id="game">
+        <p id="question" class="question"></p>
+        <p class="author">出題者: <span id="authorName">John Doe</span></p>
+
+        <form id="optionsForm">
+          <div id="options"></div>
+          <button type="button" id="submitAnswer" onclick="submitAnswer()" class="primary-button"><p class="text">回答する</p></button>
+        </form>
+        <div class="hint-container">
+          <button id="hint1" class="secondary-button"><p class="text">ヒント1</p></button>
+          <button id="hint2" class="secondary-button"><p class="text">ヒント2</p></button>
+          <button id="hint3" class="secondary-button"><p class="text">ヒント3</p></button>
+        </div>
+      </div>
+      <!-- 出題者情報 (名前のみ) -->
+    </div>
+
+    <!-- 回答結果画面 -->
+    <div id="resultScreen" style="display: none;">
+      <div class="result-container">
+        <h1 class="frame-title">回答</h1>
+        <div id="resultImageContainer" class="result-text">
+          <img id="resultImage" alt="結果画像" class="img" />
+          <p id="resultMessage" class="subtext"></p>
+        </div>
+
+        <div class="correct-container">
+          <p class="answer">正解：<span id="selectedAnswer"></span></p>
+          <p class="correct">あなたの答え: <span id="correctAnswer"></span></p>
+        </div>
+
+        <div class="answer-container">
+          <dl class="question">
+            <dt class="title">問題</dt>
+            <dd id="resultQuestionText"></dd>
+          </dl>
+          <dl class="answer">
+            <dt class="title">答え</dt>
+            <dd id="resultAnswerText"></dd>
+          </dl>
+        </div>
+
+        <div class="explanation-container">
+          <p class="title"><img src="/assets/img/text_explanation.svg" alt="解説" width="67" height="31"></p>
+          <p id="resultExplanation" class="explanation"></p>
+          <p class="source">出典: <a id="sourceLink" href="" target="_blank">リンク</a></p>
+        </div>
+
+        <p class="comment" id="resultComment"></p>
+        
+        <button onclick="nextQuestion()" id="nextButton" class="primary-button"><p class="text">次の問題へ</p></button>
+      </div>
+    </div>
+
+    <!-- 結果発表ページ -->
+    <div id="finalScreen" style="display: none; text-align: center;">
+      <div class="final-container">
+        <h1 class="frame-title">結果発表</h1>
+        <p class="result">あなたの正解数: <span id="finalScore" class="strong"></span> / 5</p>
+        <p class="message">いかがでしたか？ぜひ元動画も観てくださいね！</p>
+        <button onclick="restartGame()" class="primary-button"><p class="text">もう一度挑戦する</p></button>
+        <a href="/" class="primary-button"><p class="text">トップページへ</p></a>
+      </div>
+    </div>
+
+    <!-- モーダル（ヒント用） -->
+    <div id="hintModal" class="modal-container">
+      <div class="overlay">
+        <div class="dialog">
+          <p class="title"><img src="/assets/img/text_hint.svg" alt="ヒント" width="86" height="29"></p>
+          <p id="hintText"></p>
+          <button onclick="closeModal()" class="thirdly-button">閉じる</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer-container">
+		<p>copyright @seahorse_saki All Rights Reserved.</p>
+	</footer>
+  <script src="/assets/script/game.js" defer></script>
+</body>
+
+</html>

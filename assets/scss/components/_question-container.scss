@@ -1,0 +1,26 @@
+@charset "utf-8";
+@use "../base/_variable" as v;
+
+.question-container {
+  .frame-title {
+    margin-top: 0;
+  }
+
+  .question {
+    font-weight: bold;
+    @include v.fz(18);
+  }
+
+  .author {
+    margin: 8px 0 24px;
+    color: v.$text-secondary;
+    text-align: center;
+    @include v.fz(14);
+  }
+
+  .primary-button {
+    width: 100%;
+    min-height: 48px;
+    margin: 24px 0 0;
+  }
+}

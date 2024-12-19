@@ -1,0 +1,59 @@
+@charset "utf-8";
+@use "../base/_variable" as v;
+
+.list-item {
+  overflow: hidden;
+  background: #fff;
+  border: 2px solid v.$bg-primary;
+  border-radius: 8px;
+
+  > .question {
+    display: flex;
+    gap: 8px;
+    padding: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+    background: v.$bg-key;
+    transition: background 0.2s;
+
+    .en {
+      font-weight: bold;
+      @include v.fz(20);
+    }
+  }
+
+  .answer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+  }
+
+  &[open] .answer {
+    opacity: 1;
+  }
+
+  .answer-inner {
+    padding: 16px;
+    background: #fff;
+    border-top: 2px solid v.$border-primary;
+
+    .author {
+      margin: 16px 0 0;
+      line-height: 1.5;
+      color: v.$text-secondary;
+      @include v.fz(14);
+    }
+
+    .source {
+      margin: 8px 0 0;
+      line-height: 1.5;
+      color: v.$text-secondary;
+      @include v.fz(14);
+
+      a {
+        color: v.$text-secondary;
+      }
+    }
+  }
+}

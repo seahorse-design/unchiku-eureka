@@ -1,0 +1,28 @@
+@charset "utf-8";
+@use "../base/_variable" as v;
+
+.final-container {
+  > .frame-title {
+    margin-top: 0;
+  }
+
+  > .result {
+    font-weight: bold;
+    @include v.fz(18);
+
+    .strong {
+      color: #d8233d;
+      @include v.fz(24);
+    }
+  }
+
+  > .message {
+    margin: 32px 0;
+  }
+
+  > .primary-button {
+    width: 100%;
+    min-height: 52px;
+    margin: 24px auto 0;
+  }
+}

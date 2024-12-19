@@ -1,0 +1,23 @@
+@charset "utf-8";
+@use "../base/_variable" as v;
+
+.thirdly-button {
+	position: relative;
+	display: block;
+	padding: 0.5em;
+	margin: 3% auto 0;
+  color: #fff;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	background: v.$bg-primary;
+	border: 2px solid #000;
+	border-radius: 8px;
+	transition: color 0.2s, background 0.2s;
+  @include v.fz(14);
+
+	&:hover {
+    color: v.$text-primary;
+		background: #fff;
+	}
+}
