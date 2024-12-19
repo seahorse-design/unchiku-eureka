@@ -7,7 +7,7 @@ let score = 0;
 // JSONデータをロード
 async function loadQuestions() {
   try {
-    const response = await fetch("questions.json");
+    const response = await fetch("unchiku-eureka/assets/script/questions.json");
     if (!response.ok) {
       throw new Error("Failed to load JSON data.");
     }
