@@ -2,7 +2,7 @@
 @use "../base/_variable" as v;
 
 .answer-container {
-  margin: 24px  0 0;
+  margin: 48px  0 0;
   
   .title {
     font-weight: bold;
@@ -10,7 +10,8 @@
 
   > .question {
     line-height: 1.5;
-    @include v.fz(14);
+
+    // @include v.fz(14);
 
     .title {
       color: #069321;
@@ -20,7 +21,8 @@
   > .answer {
     margin: 8px 0 0;
     line-height: 1.5;
-    @include v.fz(14);
+
+    // @include v.fz(14);
 
     .title {
       color: #d8233d

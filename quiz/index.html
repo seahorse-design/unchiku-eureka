@@ -2,16 +2,42 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-59THKW3K');</script>
+  <!-- End Google Tag Manager -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>問題を解く|うんちくエウレーカ3択クイズ｜ゆる言語学ラジオファンサイト</title>
+  <meta name="description" content="3択の問題を解いてみる！このサイトはYouTubeチャンネル「ゆる言語学ラジオ」のファンサイトです。問題と答えがうんちくとしても楽しめる、水平思考クイズを遊べます。">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta property="og:url" content="https://seahorse-design.github.io/unchiku-eureka/quiz/">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="問題を解く|うんちくエウレーカ3択クイズ｜ゆる言語学ラジオファンサイト">
+	<meta property="og:image" content="https://seahorse-design.github.io/unchiku-eureka//assets/img/ogp.jpg">
+	<meta property="og:description" content="3択の問題を解いてみる！このサイトはYouTubeチャンネル「ゆる言語学ラジオ」のファンサイトです。問題と答えがうんちくとしても楽しめる、水平思考クイズを遊べます。">
+	<meta property="og:site_name" content="うんちくエウレーカ3択クイズ｜ゆる言語学ラジオファンサイト">
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:title" content="問題を解く|うんちくエウレーカ3択クイズ｜ゆる言語学ラジオファンサイト">
+	<meta name="twitter:description" content="3択の問題を解いてみる！このサイトはYouTubeチャンネル「ゆる言語学ラジオ」のファンサイトです。問題と答えがうんちくとしても楽しめる、水平思考クイズを遊べます。">
+	<meta name="twitter:image" content="https://seahorse-design.github.io/unchiku-eureka//assets/img/ogp.jpg">
+	<link rel="canonical" href="https://seahorse-design.github.io/unchiku-eureka/quiz/">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="body-container">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59THKW3K"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <header class="header-container">
-    <p class="logo"><a href="../"><img src="../assets/img/logo.svg" alt="うんちくエウレーカ3択クイズ" width="309" height="90"></a></p>
+    <p class="logo"><a href="../"><img src="../assets/img/logo.svg" alt="うんちくエウレーカ3択クイズ" width="309" height="90" loading="eager"></a></p>
   </header>
 
   <div class="wrapper-container">
@@ -38,7 +64,7 @@
     <!-- 回答結果画面 -->
     <div id="resultScreen" style="display: none;">
       <div class="result-container">
-        <h1 class="frame-title">回答</h1>
+        <h1 class="frame-title">解答</h1>
         <div id="resultImageContainer" class="result-text">
           <img id="resultImage" alt="結果画像" class="img" />
           <p id="resultMessage" class="subtext"></p>
@@ -61,12 +87,15 @@
         </div>
 
         <div class="explanation-container">
-          <p class="title"><img src="../assets/img/text_explanation.svg" alt="解説" width="67" height="31"></p>
+          <p class="title"><img src="../assets/img/text_explanation.svg" alt="解説" width="67" height="31" loading="lazy"></p>
           <p id="resultExplanation" class="explanation"></p>
           <p class="source">出典: <a id="sourceLink" href="" target="_blank">リンク</a></p>
         </div>
 
-        <p class="comment" id="resultComment"></p>
+        <div class="comment">
+          <p class="title"><img src="../assets/img/text_comment.svg" alt="コメント" width="120" height="30" loading="lazy"></p>
+          <p id="resultComment"></p>
+        </div>
         
         <button onclick="nextQuestion()" id="nextButton" class="primary-button"><p class="text">次の問題へ</p></button>
       </div>
@@ -76,7 +105,7 @@
     <div id="finalScreen" style="display: none; text-align: center;">
       <div class="final-container">
         <h1 class="frame-title">結果発表</h1>
-        <p class="result">あなたの正解数: <span id="finalScore" class="strong"></span> / 5</p>
+        <p class="result">あなたの正解数<br><span id="finalScore" class="strong"></span> / 5</p>
         <p class="message">いかがでしたか？ぜひ元動画も観てくださいね！</p>
         <button onclick="restartGame()" class="primary-button"><p class="text">もう一度挑戦する</p></button>
         <a href="../" class="primary-button"><p class="text">トップページへ</p></a>
@@ -88,7 +117,7 @@
       <div class="overlay">
         <div class="dialog">
           <p class="title"><img src="../assets/img/text_hint.svg" alt="ヒント" width="86" height="29"></p>
-          <p id="hintText"></p>
+          <p id="hintText" class="text"></p>
           <button onclick="closeModal()" class="thirdly-button">閉じる</button>
         </div>
       </div>

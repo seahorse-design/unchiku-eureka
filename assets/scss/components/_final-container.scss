@@ -10,9 +10,16 @@
     font-weight: bold;
     @include v.fz(18);
 
+    background: url("../img/bg_final.svg") no-repeat;
+    background-position: top center;
+    background-size: 100% 100%;
+
     .strong {
+      line-height: 1;
       color: #d8233d;
-      @include v.fz(24);
+      @include v.fz(70);
+
+      animation: fade-in 1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
     }
   }
 
@@ -24,5 +31,15 @@
     width: 100%;
     min-height: 52px;
     margin: 24px auto 0;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
